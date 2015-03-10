@@ -1,0 +1,19 @@
+{
+    "name": "clue/json-stream",
+    "description": "Lightweight incremental streaming JSON parser",
+    "keywords": ["JSON", "streaming parser", "incremental parser"],
+    "homepage": "https://github.com/clue/php-json-stream",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Lück",
+            "email": "christian@lueck.tv"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Clue\\JsonStream\\": "src/" }
+    },
+    "require": {
+    	"php": ">=5.3"
+    }
+}
