@@ -2,7 +2,7 @@
 
 A really simple and lightweight incremental streaming JSON parser
 
-> Note: This project is in early alpha stage! Feel free to report any issues you encounter.
+> Note: This project is in beta stage! Feel free to report any issues you encounter.
 
 ## Quickstart example
 
@@ -44,7 +44,7 @@ The recommended way to install this library is [through composer](http://getcomp
 ```JSON
 {
     "require": {
-        "clue/json-stream": "dev-master"
+        "clue/json-stream": "~0.1.0"
     }
 }
 ```
