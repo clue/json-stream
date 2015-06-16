@@ -1,11 +1,21 @@
 # clue/json-stream [![Build Status](https://travis-ci.org/clue/php-json-stream.svg?branch=master)](https://travis-ci.org/clue/php-json-stream)
 
-A really simple and lightweight, incremental parser for [JSON streaming](https://en.wikipedia.org/wiki/JSON_Streaming), in PHP.
+A really simple and lightweight, incremental parser for [JSON streaming](https://en.wikipedia.org/wiki/JSON_Streaming)
+(concatenated JSON and [line delimited JSON](https://en.wikipedia.org/wiki/Line_Delimited_JSON)), in PHP.
+You can use this library to process a stream of data that consists of multiple JSON documents.
 
-You can use this library to process a stream of data that consists of multiple JSON documents
-separated by newlines, whitespace or as concatenated JSON without whitespace.
+A line delimited JSON example stream consisting of 3 individual JSON documents could look like this:
 
-An example stream consisting of 3 individual JSON documents could look like this:
+```json
+{ "id": 1, "name": "first" }
+{ "id": 3, "name": "third" }
+{ "id": 6, "name": "sixth" }
+```
+
+The whitespace between the individual JSON documents is optional.
+Instead of newlines, you can use any number of whitespace or none at all.
+
+A concatenated JSON example stream consisting of 3 individual JSON documents could look like this:
 ```json
 { "id": 1, "name": "first" }{ "id": 3, "name": "third" }{ "id": 6, "name": "sixth"}
 ```
