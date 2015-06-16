@@ -1,6 +1,24 @@
 # clue/json-stream [![Build Status](https://travis-ci.org/clue/php-json-stream.svg?branch=master)](https://travis-ci.org/clue/php-json-stream)
 
-A really simple and lightweight incremental streaming JSON parser
+A really simple and lightweight, incremental parser for [JSON streaming](https://en.wikipedia.org/wiki/JSON_Streaming), in PHP.
+
+You can use this library to process a stream of data that consists of multiple JSON documents
+separated by newlines, whitespace or as concatenated JSON without whitespace.
+
+An example stream consisting of 3 individual JSON documents could look like this:
+```json
+{ "id": 1, "name": "first" }{ "id": 3, "name": "third" }{ "id": 6, "name": "sixth"}
+```
+
+The input stream can be of arbitrary size and can be interrupted at any time.
+This is often useful for processing network streams, where the chunk/buffer size is
+not under your control and you could potentially read single bytes only.
+
+Please note that this library is about processing a stream that can contain any number of
+JSON documents.
+It is assumed that each document has a reasonable size and fits into memory.
+This is not to be confused with a streaming parser for processing a single, huge JSON document
+that is too big to fit into memory.
 
 > Note: This project is in beta stage! Feel free to report any issues you encounter.
 
