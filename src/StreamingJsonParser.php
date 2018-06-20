@@ -11,6 +11,10 @@ class StreamingJsonParser
 
     private $assoc = true;
 
+    /**
+     * @param string $chunk
+     * @return array
+     */
     public function push($chunk)
     {
         $objects = array();
@@ -62,8 +66,19 @@ class StreamingJsonParser
         return $objects;
     }
 
+    /**
+     * @return bool
+     */
     public function isEmpty()
     {
         return ($this->buffer === '');
+    }
+
+    /**
+     * @return string
+     */
+    public function getBuffer()
+    {
+        return $this->buffer;
     }
 }

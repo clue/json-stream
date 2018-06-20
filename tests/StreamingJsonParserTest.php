@@ -57,6 +57,14 @@ class StreamingJsonParserTest extends TestCase
         $this->assertTrue($this->parser->isEmpty());
     }
 
+    public function testGetBuffer()
+    {
+        $this->parser->push('{ "id": 1, "name":');
+        $this->assertEquals('{ "id": 1, "name":', $this->parser->getBuffer());
+        $this->parser->push('"first" }{ "id": 3, "name":');
+        $this->assertEquals('{ "id": 3, "name":', $this->parser->getBuffer());
+    }
+
     /**
      * @expectedException UnexpectedValueException
      */
