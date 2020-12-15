@@ -1,9 +1,19 @@
 language: php
-php:
-  - 5.3
-  - 5.6
-  - hhvm
+
+# lock distro so new future defaults will not break the build
+dist: trusty
+
+jobs:
+  include:
+    - php: 5.3
+      dist: precise
+    - php: 5.6
+    - php: hhvm-3.18
+  allow_failures:
+    - php: hhvm-3.18
+
 install:
   - composer install --prefer-source --no-interaction
+
 script:
-  - phpunit --coverage-text
+  - vendor/bin/phpunit --coverage-text
