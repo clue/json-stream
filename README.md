@@ -1,4 +1,6 @@
-# clue/json-stream [![Build Status](https://travis-ci.org/clue/php-json-stream.svg?branch=master)](https://travis-ci.org/clue/php-json-stream)
+# clue/json-stream
+
+[![CI status](https://github.com/clue/php-json-stream/workflows/CI/badge.svg)](https://github.com/clue/php-json-stream/actions)
 
 A really simple and lightweight, incremental parser for [JSON streaming](https://en.wikipedia.org/wiki/JSON_Streaming)
 (concatenated JSON and [line delimited JSON](https://en.wikipedia.org/wiki/Line_Delimited_JSON)), in PHP.
