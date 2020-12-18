@@ -2,11 +2,14 @@
 
 use Clue\JsonStream\StreamingJsonParser;
 
-class StreamingJsonParserTest extends TestCase
+class StreamingJsonParserTest extends PHPUnit\Framework\TestCase
 {
     private $parser;
 
-    public function setUp()
+    /**
+     * @before
+     */
+    public function setUpParser()
     {
         $this->parser = new StreamingJsonParser();
     }
@@ -57,11 +60,26 @@ class StreamingJsonParserTest extends TestCase
         $this->assertTrue($this->parser->isEmpty());
     }
 
-    /**
-     * @expectedException UnexpectedValueException
-     */
     public function testInvalid()
     {
+        $this->setExpectedException('UnexpectedValueException');
         $this->parser->push('invalid');
+    }
+
+    public function setExpectedException($exception, $exceptionMessage = '', $exceptionCode = null)
+    {
+        if (method_exists($this, 'expectException')) {
+            // PHPUnit 5.2+
+            $this->expectException($exception);
+            if ($exceptionMessage !== '') {
+                $this->expectExceptionMessage($exceptionMessage);
+            }
+            if ($exceptionCode !== null) {
+                $this->expectExceptionCode($exceptionCode);
+            }
+        } else {
+            // legacy PHPUnit 4 - PHPUnit 5.1
+            parent::setExpectedException($exception, $exceptionMessage, $exceptionCode);
+        }
     }
 }
