@@ -3,10 +3,12 @@
 [![CI status](https://github.com/clue/json-stream/workflows/CI/badge.svg)](https://github.com/clue/json-stream/actions)
 
 A really simple and lightweight, incremental parser for [JSON streaming](https://en.wikipedia.org/wiki/JSON_Streaming)
-(concatenated JSON and [line delimited JSON](https://en.wikipedia.org/wiki/Line_Delimited_JSON)), in PHP.
+(concatenated JSON and [newline-delimited JSON](http://ndjson.org/), in PHP.
 You can use this library to process a stream of data that consists of multiple JSON documents.
 
-A line delimited JSON example stream consisting of 3 individual JSON documents could look like this:
+## JSON streaming
+
+A newline-delimited JSON (NDJSON) example stream consisting of 3 individual JSON documents could look like this:
 
 ```json
 { "id": 1, "name": "first" }
@@ -14,10 +16,18 @@ A line delimited JSON example stream consisting of 3 individual JSON documents c
 { "id": 6, "name": "sixth" }
 ```
 
-The whitespace between the individual JSON documents is optional.
+> Less commonly, the same format is referred to as JSON lines (JSONL) or
+  line-delimited JSON (LDJSON), which is not to be confused with JSON-LD.
+  To avoid confusion, we consistently refer to this as newline-delimited JSON (NDJSON).
+  If you control the generating side, we highly recommend going for NDJSON
+  instead of using concatenated JSON as discussed below.
+  See also [clue/reactphp-ndjson](https://github.com/clue/reactphp-ndjson).
+
+For this project, the whitespace between the individual JSON documents is entirely optional.
 Instead of newlines, you can use any number of whitespace or none at all.
 
 A concatenated JSON example stream consisting of 3 individual JSON documents could look like this:
+
 ```json
 { "id": 1, "name": "first" }{ "id": 3, "name": "third" }{ "id": 6, "name": "sixth"}
 ```
@@ -105,3 +115,9 @@ $ php vendor/bin/phpunit
 ## License
 
 MIT
+
+## More
+
+* If you want to efficiently process (possibly infinite) streams of data,
+  you may want to use [clue/reactphp-ndjson](https://github.com/clue/reactphp-ndjson)
+  to process newline-delimited JSON (NDJSON) files (`.ndjson` file extension).
