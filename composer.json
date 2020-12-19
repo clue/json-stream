@@ -7,14 +7,14 @@
     "authors": [
         {
             "name": "Christian Lück",
-            "email": "christian@lueck.tv"
+            "email": "christian@clue.engineering"
         }
     ],
     "autoload": {
         "psr-4": { "Clue\\JsonStream\\": "src/" }
     },
     "require": {
-    	"php": ">=5.3"
+        "php": ">=5.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.35"

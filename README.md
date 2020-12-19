@@ -6,6 +6,27 @@ A really simple and lightweight, incremental parser for [JSON streaming](https:/
 (concatenated JSON and [newline-delimited JSON](http://ndjson.org/), in PHP.
 You can use this library to process a stream of data that consists of multiple JSON documents.
 
+**Table of contents**
+
+* [Support us](#support-us)
+* [JSON streaming](#json-streaming)
+* [Quickstart example](#quickstart-example)
+* [Description](#description)
+* [Install](#install)
+* [Tests](#tests)
+* [License](#license)
+* [More](#more)
+
+## Support us
+
+We invest a lot of time developing, maintaining and updating our awesome
+open-source projects. You can help us sustain this high-quality of our work by
+[becoming a sponsor on GitHub](https://github.com/sponsors/clue). Sponsors get
+numerous benefits in return, see our [sponsoring page](https://github.com/sponsors/clue)
+for details.
+
+Let's take these projects to the next level together! 🚀
+
 ## JSON streaming
 
 A newline-delimited JSON (NDJSON) example stream consisting of 3 individual JSON documents could look like this:
@@ -41,8 +62,6 @@ JSON documents.
 It is assumed that each document has a reasonable size and fits into memory.
 This is not to be confused with a streaming parser for processing a single, huge JSON document
 that is too big to fit into memory.
-
-> Note: This project is in beta stage! Feel free to report any issues you encounter.
 
 ## Quickstart example
 
@@ -82,12 +101,11 @@ You probably don't want to use this if
 The recommended way to install this library is [through Composer](https://getcomposer.org/).
 [New to Composer?](https://getcomposer.org/doc/00-intro.md)
 
-```JSON
-{
-    "require": {
-        "clue/json-stream": "~0.1.0"
-    }
-}
+This project does not currently follow [SemVer](https://semver.org/).
+This will install the latest supported version:
+
+```bash
+$ composer require clue/json-stream:^0.1.1
 ```
 
 See also the [CHANGELOG](CHANGELOG.md) for details about version upgrades.
@@ -100,7 +118,7 @@ It's *highly recommended to use PHP 7+* for this project.
 ## Tests
 
 To run the test suite, you first need to clone this repo and then install all
-dependencies [through Composer](https://getcomposer.org):
+dependencies [through Composer](https://getcomposer.org/):
 
 ```bash
 $ composer install
@@ -114,7 +132,10 @@ $ php vendor/bin/phpunit
 
 ## License
 
-MIT
+This project is released under the permissive [MIT license](LICENSE).
+
+> Did you know that I offer custom development services and issuing invoices for
+  sponsorships of releases and for contributions? Contact me (@clue) for details.
 
 ## More
 
