@@ -2,7 +2,7 @@
     "name": "clue/json-stream",
     "description": "Lightweight incremental streaming JSON parser",
     "keywords": ["JSON", "streaming parser", "incremental parser"],
-    "homepage": "https://github.com/clue/php-json-stream",
+    "homepage": "https://github.com/clue/json-stream",
     "license": "MIT",
     "authors": [
         {
