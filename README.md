@@ -1,6 +1,7 @@
 # clue/json-stream
 
 [![CI status](https://github.com/clue/json-stream/workflows/CI/badge.svg)](https://github.com/clue/json-stream/actions)
+[![installs on Packagist](https://img.shields.io/packagist/dt/clue/json-stream?color=blue&label=installs%20on%20Packagist)](https://packagist.org/packages/clue/json-stream)
 
 A really simple and lightweight, incremental parser for [JSON streaming](https://en.wikipedia.org/wiki/JSON_Streaming)
 (concatenated JSON and [newline-delimited JSON](http://ndjson.org/), in PHP.
